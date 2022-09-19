@@ -1,0 +1,7 @@
+{
+	"ContactList": [
+		{"FullName": "Nicole Gray", "ContactNumber": "7053218973", "EmailAddress": "nicole@example.com"},
+		{"FullName": "Gabba Booda", "ContactNumber": "7055555555", "EmailAddress": "gabba@example.com"},
+		{"FullName": "Rah Rah", "ContactNumber": "5551111234", "EmailAddress": "rahrah@example.com"}
+	]
+}
