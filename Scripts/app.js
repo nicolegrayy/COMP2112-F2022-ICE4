@@ -4,9 +4,15 @@
 (function () {
     function Start() {
         console.log("App Started!");
+        let contactList;
         $.getJSON("./Data/contacts.json", function (dataSource) {
-            console.log(dataSource.ContactList[0]);
+            // Get your data from the DataSource
+            contactList = dataSource.ContactList;
+            // Load your data into objects
+            let contact = new Contact();
+            console.log(contact.toString());
         });
+        localStorage.setItem("0", "Nicole");
     }
     window.addEventListener("load", Start);
 })();
