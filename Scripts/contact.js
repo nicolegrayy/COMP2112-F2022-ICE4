@@ -49,5 +49,19 @@ class Contact {
         outputString += `Email Address: ${this.EmailAddress}\n`;
         return outputString;
     }
+    /**
+     *This method converts class Data Members to a coma separated list compatible with JSON
+     *
+     * @return {string}
+     * @memberof Contact
+     */
+    toJSON() {
+        return `${this.FullName}, ${this.ContactNumber}, ${this.EmailAddress}`;
+    }
+    fromJSON(data) {
+        this.FullName = data.FullName;
+        this.ContactNumber = data.ContactNumber;
+        this.EmailAddress = data.EmailAddress;
+    }
 }
 //# sourceMappingURL=contact.js.map

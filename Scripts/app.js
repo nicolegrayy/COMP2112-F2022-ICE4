@@ -8,11 +8,11 @@
         $.getJSON("./Data/contacts.json", function (dataSource) {
             // Get your data from the DataSource
             contactList = dataSource.ContactList;
-            // Load your data into objects
-            let contact = new Contact();
-            console.log(contact.toString());
+            for (const contact of contactList) {
+                let newContact = new Contact(contact.FullName, contact.ContactNumber, contact.EmailAddress);
+                console.log(newContact.toString());
+            }
         });
-        localStorage.setItem("0", "Nicole");
     }
     window.addEventListener("load", Start);
 })();
