@@ -72,7 +72,7 @@ class Contact
 /**
  *This method converts class Data Members to a coma separated list compatible with JSON
  *
- * @return {string}
+ * @returns {string}
  * @memberof Contact
  */
 public toJSON():string
@@ -80,7 +80,14 @@ public toJSON():string
 		return `${this.FullName}, ${this.ContactNumber}, ${this.EmailAddress}`;
 	}
 
-	public fromJSON(data:any):void {
+
+/**
+ * This method reads data from a coma-separated list and assigns it to class Data Methods
+ *
+ * @param {string} data
+ * @memberof Contact
+ */
+public fromJSON(data:any):void {
 		this.FullName = data.FullName;
 		this.ContactNumber = data.ContactNumber;
 		this.EmailAddress = data.EmailAddress;

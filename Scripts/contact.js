@@ -52,12 +52,18 @@ class Contact {
     /**
      *This method converts class Data Members to a coma separated list compatible with JSON
      *
-     * @return {string}
+     * @returns {string}
      * @memberof Contact
      */
     toJSON() {
         return `${this.FullName}, ${this.ContactNumber}, ${this.EmailAddress}`;
     }
+    /**
+     * This method reads data from a coma-separated list and assigns it to class Data Methods
+     *
+     * @param {string} data
+     * @memberof Contact
+     */
     fromJSON(data) {
         this.FullName = data.FullName;
         this.ContactNumber = data.ContactNumber;
