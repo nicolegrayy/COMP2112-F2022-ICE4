@@ -39,22 +39,52 @@ function LoadContactListData(): Contact[]
 		}
 		return ContactArray;
 	}
+
+function LoadHeader(): void 
+{
+	$.get("./Views/components/header.html", function(html_data)
+	{
+		// vanilla javascript
+		// document.getElementsByTagName("header")[0].innerHTML = html_data;
+		// jquery version
+		$("header").html(html_data);
+		// $("#homePage").addClass("active");
+
+		switch (document.title) 
+		{
+			case "Home":
+				$("#homePage").addClass("active");
+				break;
+			case "About Us":
+				$("#aboutPage").addClass("active");
+				break;
+			case "Our Projects":
+				$("#projectsPage").addClass("active");
+				break;
+			case "Our Services":
+				$("#servicesPage").addClass("active");
+				break;
+			case "Contact Us":
+				$("#contactPage").addClass("active");
+				break;
+		}
+	});
+}
+
+function LoadFooter(): void
+{
+	$.get("./Views/components/footer.html", function(html_data)
+	{
+		$("footer").html(html_data);
+	});
+}
+
 function Start()
 {
 	console.log("App Started!");
-
-	$.getJSON("./Data/contacts.json", function(dataSource){
-		// Get your data from the DataSource
-		let contactList:any[] = dataSource.ContactList;
-		
-		SaveContactListData(contactList);
-
-		let ContactArray = LoadContactListData();
-
-		for (const contact of ContactArray) {
-			console.log(contact.toString());
-		}
-	});
+	
+	LoadHeader();
+	LoadFooter();
 }
 
 window.addEventListener("load", Start);
