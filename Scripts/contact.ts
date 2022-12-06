@@ -11,7 +11,7 @@ class Contact
 		return this.fullName;
 	}
 
-	set FullName(name:string)
+	set FullName(name: string)
 	{
 		this.fullName = name;
 	}
@@ -65,7 +65,7 @@ class Contact
 		outputString += `Full Name: ${this.FullName}\n`;
 		outputString += `Contact Number: ${this.ContactNumber}\n`;
 		outputString += `Email Address: ${this.EmailAddress}\n`;
-		return outputString
+		return outputString;
 	}
 
 	
